@@ -1,5 +1,8 @@
 -- Hpwd, a haskell implementation of GNU pwd.
 {-# LANGUAGE MultiParamTypeClasses, FlexibleInstances #-}
+
+-- http://arduino.stackexchange.com/questions/21309/error-while-loading-libtinfo-so-5-solved
+
 module Main where
 import System.Environment
 import System.Console.Terminfo.Base
@@ -15,8 +18,8 @@ main = do
   runTermOutput term (termText (showHelp defaultDefault))
   runTermOutput term (termText (showVersion defaultDefault))
   output <- showOutput options
-  runTermOutput term (termText (output))
-  runTermOutput term (termText ("Options: "++(stripQuotes (show options))++"\n"))
+  runTermOutput term (termText output)
+  runTermOutput term (termText ("Options: "++stripQuotes (show options)++"\n"))
   return ()
 
 showOutput :: PwdOptions -> IO String
@@ -25,11 +28,11 @@ showOutput opts  = return "" -- <do-stuff-Here>
 
 
 showHelp :: DefaultOptions -> String
-showHelp opts | (displayHelp opts) = concat (intersperse "\n" helpText)
+showHelp opts | displayHelp opts = intercalate "\n" helpText
               | otherwise = ""
 
 showVersion :: DefaultOptions -> String
-showVersion opts | (displayVersion opts) = concat (intersperse "\n" versionText)
+showVersion opts | displayVersion opts = concat (intersperse "\n" versionText)
                  | otherwise = ""
 
 
@@ -62,7 +65,7 @@ genericizeCustom (PwdOptions b1) = GO (Right (PwdOptions b1))
 allFlags :: [OptionFlags GnuOption]
 allFlags = [ 
     (OF "" '\0' "" (\x -> case x of
-    GO (Left opts) -> GO (Left opts{targets = (targets opts)})
+    GO (Left opts) -> GO (Left opts{targets = targets opts})
   ))
   , (OF "" '\0' "" (\x -> case x of
     GO (Right opts) -> GO (Right opts{resolveSymlinks = False})

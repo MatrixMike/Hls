@@ -1,0 +1,27 @@
+Thu 09 Mar 2017 05:07:16 AEDT 
+Ben,
+running cabal update improved things - the files compile now - generating .o files
+
+mikeh@mikeh-Latitude-D830 ~/Hls $ cabal install parsec
+cabal: failed to parse output of 'ghc-pkg dump'
+
+but the link stage fails with:
+ghc --make "Hwhoami.hs" (in directory: /home/mikeh/Hls)
+Linking Hwhoami ...
+/usr/bin/ld: cannot find -ltinfo
+collect2: error: ld returned 1 exit status
+`gcc' failed in phase `Linker'. (Exit code: 1)
+Compilation failed.
+
+
+I use geany 1.29, which lets me lint (hlint) easily. I use ghc 8.0.2 . 
+
+-> I had not taken too much notice of cabal as I seemed to get my small stuff working without too much reference to cabal - I know that I still have some learning issues with the system hierachy 
+
+cabal / stack / ghci / etc 
+
+Sending this via meetup - as not wanting to taint any github comms at the moment...
+good fun, low priority I suppose...
+Mike
+
+
