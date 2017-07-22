@@ -20,6 +20,11 @@ stripQuotes ('"':xs) =
     else '"' : xs
 stripQuotes xs = xs
 
+data WhoamiOptions = WhoamiOptions
+  { displayHelp :: Bool
+  , displayVersion :: Bool
+  } deriving (Show, Eq)
+
 {-getUsername :: IO String
 getUsername = do
   e <- getEnvironment
