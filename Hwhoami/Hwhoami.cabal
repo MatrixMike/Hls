@@ -1,8 +1,8 @@
-name:                Hecho
-version:             0.1.0.1
+name:                Hwhoami
+version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/githubuser/Hecho#readme
+homepage:            https://github.com/githubuser/Hwhoami#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Author name here
@@ -19,23 +19,23 @@ library
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 
-executable Hecho-exe
+executable Hwhoami-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
-                     , Hecho
+                     , Hwhoami
   default-language:    Haskell2010
 
-test-suite Hecho-test
+test-suite Hwhoami-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
-                     , Hecho
+                     , Hwhoami
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/Hecho
+  location: https://github.com/githubuser/Hwhoami

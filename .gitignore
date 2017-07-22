@@ -18,3 +18,5 @@ cabal.config
 
 *.*~
 *.log
+.stack-work/
+
