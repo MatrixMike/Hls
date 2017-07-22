@@ -10,8 +10,12 @@ import Data.List
 
 someFunc :: IO ()
 someFunc = do
+    term <- setupTermFromEnv
+    args <- getArgs
+    let options = processArgs args defaultWhoami
     putStrLn    "someFunc 4"
     putStrLn    "more text"
+    processArgs args defaultWhoami
     {-getUsername-}
 
 stripQuotes :: String -> String
@@ -26,11 +30,22 @@ showVersion opts
   | (displayVersion opts) = concat (intersperse "\n" versionText)
   | otherwise = ""
   
+processArgs :: [String] -> WhoamiOptions -> WhoamiOptions
+processArgs [] opts = opts
+processArgs (x:xs) opts =
+  case x of
+    "--help" -> processArgs xs opts {displayHelp = True}
+    "--version" -> processArgs xs opts {displayVersion = True}
+    _ -> processArgs xs opts
+ 
+defaultWhoami :: WhoamiOptions
+defaultWhoami = WhoamiOptions False False
+
 data WhoamiOptions = WhoamiOptions
   { displayHelp :: Bool
   , displayVersion :: Bool
   } deriving (Show, Eq)
-
+  
 getUsername :: IO String
 getUsername = do
   e <- getEnvironment
@@ -47,3 +62,5 @@ versionText =
   , "Written by Richard Mlynarik."
   , "Ported by PuZZleDucK.\n"
   ]
+
+
