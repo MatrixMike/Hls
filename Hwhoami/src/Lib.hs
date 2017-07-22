@@ -20,6 +20,11 @@ stripQuotes ('"':xs) =
     else '"' : xs
 stripQuotes xs = xs
 
+showVersion :: WhoamiOptions -> String
+showVersion opts
+  | (displayVersion opts) = concat (intersperse "\n" versionText)
+  | otherwise = ""
+  
 data WhoamiOptions = WhoamiOptions
   { displayHelp :: Bool
   , displayVersion :: Bool
