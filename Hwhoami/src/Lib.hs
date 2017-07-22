@@ -4,7 +4,9 @@ module Lib
       {-stripQuotes-}
       {-getUsername  -}
     ) where
-
+import System.Environment
+{-import System.Console.Terminfo.Base -}
+import Data.List
 
 someFunc :: IO ()
 someFunc = do
