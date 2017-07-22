@@ -10,9 +10,9 @@ import Data.List
 
 someFunc :: IO ()
 someFunc = do
-    term <- setupTermFromEnv
+--    term <- setupTermFromEnv
     args <- getArgs
-    let options = processArgs args defaultWhoami
+--    let options = processArgs args defaultWhoami
     putStrLn    "someFunc 4"
     putStrLn    "more text"
     processArgs args defaultWhoami
