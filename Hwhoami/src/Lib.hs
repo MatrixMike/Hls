@@ -12,6 +12,7 @@ someFunc :: IO ()
 someFunc = do
     putStrLn    "someFunc 4"
     putStrLn    "more text"
+    {-getUsername-}
 
 stripQuotes :: String -> String
 stripQuotes ('"':xs) =
@@ -30,11 +31,11 @@ data WhoamiOptions = WhoamiOptions
   , displayVersion :: Bool
   } deriving (Show, Eq)
 
-{-getUsername :: IO String
+getUsername :: IO String
 getUsername = do
   e <- getEnvironment
   return (((snd . head) (filter (\x -> (fst x) == "USER") e)) ++ "\n")
--}
+
 versionText :: [String]
 versionText =
   [ "Hwhoami (Haskell implementation of GNU whoami) 1.0"
