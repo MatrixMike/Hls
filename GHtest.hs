@@ -1,4 +1,11 @@
-
+{- 23.07.2017 11:52:53
+this program chosen to convert to 'stack build'
+as
+1) it compiles under geany 1.30.1
+2) uses some imports 
+3) does something when executed - though 
+4) Lint has some interesting suggestions
+-}
 module Main where
 import System.Environment
 import System.Process
@@ -9,7 +16,7 @@ import Test.QuickCheck.Monadic
 main = do
   putStrLn ":: Test Gnu <=> Haskell implementations ::"
   (arg:_) <- getArgs
-  putStrLn $ "Testing: " ++ (show arg)
+  putStrLn $ "Testing: " ++ show arg
   putStrLn $ "Gnu cmd: " ++ arg ++ "  Haskell cmd: H" ++ arg ++".hs"
   outGnu <- runGnuCmd arg "y"
   putStrLn $ "5 Gnu:\n" ++ unlines (take 5 outGnu)
