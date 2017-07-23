@@ -1,6 +1,6 @@
 
 # Haskell clone of coreutils #
-
+(matrixmike addition at foot of this comment)
 This has turned into a vain attempt to recreate the GNU coreutils programs in Haskell, for no particular reason... Maybe someday some student called Hlinus will write a kernel and this will then come in handy.
 
 ### Now with bonus: Hlolcat ###
@@ -120,5 +120,8 @@ This has turned into a vain attempt to recreate the GNU coreutils programs in Ha
 Major deps:
 * System.Console.Terminfo.Cursor
 * System.Environment
+
+# matrixmike additions: I am using this as a learning project for Haskell. I started using geany (about 1.30.1) to compile
+and hlint to give suggestions. I am now using 'stack build' and learning about cabal.
 
 

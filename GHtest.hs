@@ -1,4 +1,5 @@
 {- 23.07.2017 11:52:53
+use 
 this program chosen to convert to 'stack build'
 as
 1) it compiles under geany 1.30.1
