@@ -1,4 +1,5 @@
 {- 23.07.2017 11:52:53
+   11.08.2017 00:01:59
 use 
 this program chosen to convert to 'stack build'
 as

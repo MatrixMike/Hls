@@ -1,4 +1,4 @@
--- Lets try something a lo ittle less ambitious, like whoami.
+-- Lets try something a little less ambitious, like whoami.
 module Main where
 
 import System.Environment
