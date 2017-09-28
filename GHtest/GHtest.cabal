@@ -1,11 +1,11 @@
 name:                GHtest
-version:             0.1.0.0
+version:             0.1.0.1
 -- synopsis:
 -- description:
 homepage:            https://github.com/githubuser/GHtest#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
+author:              Mike Hewitt
 maintainer:          example@example.com
 copyright:           2017 Author name here
 category:            Web
@@ -20,7 +20,8 @@ library
   default-language:    Haskell2010
 
 executable GHtest-exe
-  hs-source-dirs:      app
+  hs-source-dirs:      src            --was app
+  exposed-modules:     Lib
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
@@ -38,4 +39,4 @@ test-suite GHtest-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/GHtest
+  location: https://github.com/MatrixMike/Hls/tree/master/GHtest
