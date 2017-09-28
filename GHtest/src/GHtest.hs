@@ -17,6 +17,7 @@ import System.IO
 import System.Process
 import Test.QuickCheck
 import Test.QuickCheck.Monadic
+import Lib
 
 main = do
   putStrLn ":: Test Gnu <=> Haskell implementations ::"
