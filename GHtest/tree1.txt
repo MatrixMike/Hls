@@ -1,0 +1,29 @@
+.
+├── app
+│   └── Main.hs
+├── BinariesVersionCheck.sh
+├── dist
+│   ├── build
+│   │   └── autogen
+│   │       ├── cabal_macros.h
+│   │       └── Paths_GHtest.hs
+│   ├── package.conf.inplace
+│   │   ├── package.cache
+│   │   └── package.cache.lock
+│   └── setup-config
+├── GHtest.cabal
+├── LICENSE
+├── README.md
+├── Setup
+├── Setup.hs
+├── src
+│   ├── GHtest.hs
+│   ├── Lib.hs
+│   └── Makefile
+├── stackSeq.sh
+├── stack.yaml
+├── test
+│   └── Spec.hs
+└── tree1.txt
+
+7 directories, 19 files
